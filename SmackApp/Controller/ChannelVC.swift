@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+@IBDesignable
 class ChannelVC: UIViewController {
     
 //Outlets
