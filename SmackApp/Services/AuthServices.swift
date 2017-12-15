@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 
 
@@ -62,7 +63,7 @@ class AuthService {
   
     // As web requests are asynchronous (we dont know when its gonna respond), so we use a completion handler to know when its finished
     
-    Alamofire.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseString {
+    Alamofire.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseString {
     (response) in
     
     if response.result.error == nil {
@@ -76,13 +77,45 @@ class AuthService {
    
         }
         
-        }
     }
-
-
 }
-
-
-
-
-
+    
+    func loginUser(email: String, password: String, completion: @escaping CompletionHandler ) {
+        
+        let lowerCaseEmail = email.lowercased()
+        let body : [String: Any] = ["email": lowerCaseEmail, "password": password]
+        
+        Alamofire.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
+            
+            if response.result.error == nil {
+                
+        //Using SwiftyJSON
+                
+                guard let data = response.data else {return}
+                let json = JSON(data: data)
+                self.userEmail = json["user"].stringValue
+                self.authToken = json["token"].stringValue
+                self.isLooggedIn = true
+                completion(true)
+                
+                // or
+                //                if let json = response.result.value as? Dictionary<String,Any> {
+                //                    if let email = json["user"] as? String {
+                //
+                //                        self.userEmail = email
+                //                    }
+                //                    if let token = json["token"] as? String {
+                //                        self.authToken = token
+                //                    }
+                //                }
+                
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+         
+        }
+        
+    }
+    
+}

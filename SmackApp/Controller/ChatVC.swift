@@ -23,8 +23,5 @@ class ChatVC: UIViewController {
 //Code to Slide back the view after we drag it or swipe it
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
-
     }
-
-
 }

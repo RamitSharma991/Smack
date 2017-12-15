@@ -22,9 +22,6 @@ class CreateAccountVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
-
-    
     @IBAction func createAccountPressed(_ sender: Any) {
         guard let email = emailTxt.text, emailTxt.text != ""
             else {
@@ -36,12 +33,13 @@ class CreateAccountVC: UIViewController {
         }
         AuthService.instance.registerUser(email: email, password: pass) { (success) in
             if success {
-                print("Registered User!")
+
+                AuthService.instance.loginUser(email: email, password: pass, completion: { (success) in
+                     print("User Login Successful!", AuthService.instance.authToken)
+                })
             }
         }
-        
-       
-        
+      
     }
     @IBAction func pickAvatar(_ sender: Any) {
     }

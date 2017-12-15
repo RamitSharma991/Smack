@@ -28,7 +28,4 @@ class ChannelVC: UIViewController {
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
         
     }
-    
-    
-
 }
