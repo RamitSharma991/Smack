@@ -9,10 +9,11 @@
 import Foundation
 
 typealias CompletionHandler = (_ Succes: Bool) -> ()
-// URL COnstants
+// URL Constants
 let BASE_URL = "https://thatchatapp.herokuapp.com/"
 let URL_REGISTER = "\(BASE_URL)account/register"
 let URL_LOGIN = "\(BASE_URL)account/login"
+let URL_USER_ADD = "\(BASE_URL)user/add"
 
 
 // Segues
