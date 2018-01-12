@@ -63,7 +63,7 @@ class CreateAccountVC: UIViewController {
                             if success {
                                 print(UserDataService.instance.name, UserDataService.instance.avatarName)
                                 self.performSegue(withIdentifier: UNWIND, sender: nil)
-                                NotificationCenter.default.post(name: NOTIFY_USER_DATA_DID_CHANGE, object: nil)
+                                NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
                             }
                         })
                     }
@@ -81,8 +81,9 @@ class CreateAccountVC: UIViewController {
         let b = CGFloat(arc4random(255)) / 255
 
 
-        bgColor = UIColor(red: r, green: g, blue: b, alpha: 1)
-        UIView.animate(withDuration: 0.4) {
+      bgColor = UIColor(red: r, green: g, blue: b, alpha: 1)
+        avatarColor = "[ \(r), \(g), \(b), 1]"
+        UIView.animate(withDuration: 0.2) {
         self.userImage.backgroundColor = self.bgColor
             
         }
@@ -94,7 +95,7 @@ class CreateAccountVC: UIViewController {
         
         }
 
-//for colored Placeholdera
+//for colored Placeholder text
     func setupView() {
         usernameTxt.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedStringKey.foregroundColor: smakePlaceHolder])
         emailTxt.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedStringKey.foregroundColor: smakePlaceHolder])

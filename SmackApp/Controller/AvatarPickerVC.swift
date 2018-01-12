@@ -63,14 +63,11 @@ class AvatarPickerVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
-    
+
     @IBAction func backButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
   
-    
     @IBAction func segmentControlChange(_ sender: Any) {
         
         if segmentControl.selectedSegmentIndex == 0 {
