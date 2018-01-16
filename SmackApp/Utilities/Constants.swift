@@ -14,6 +14,7 @@ let BASE_URL = "https://thatchatapp.herokuapp.com/"
 let URL_REGISTER = "\(BASE_URL)account/register"
 let URL_LOGIN = "\(BASE_URL)account/login"
 let URL_USER_ADD = "\(BASE_URL)user/add"
+let URL_USER_BY_EMAIL = "\(BASE_URL)users/byEmail/"
 
 //Colors
 let smakePlaceHolder = #colorLiteral(red: 0.1281911135, green: 0.4933825135, blue: 0.8569415212, alpha: 1)
@@ -34,6 +35,8 @@ let USER_EMAIL = "userEmail"
 
 //Headers
 let HEADER = ["Content-Type": "application/json; charset_utf-8"]
+let BEARER_HEADER =
+    [ "Authorization" : "Bearer \(AuthService.instance.authToken)","Content-Type": "application/json; charset_utf-8"]
 
 
 

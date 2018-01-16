@@ -75,22 +75,23 @@ class CreateAccountVC: UIViewController {
     @IBAction func pickAvatar(_ sender: Any) {
         performSegue(withIdentifier: TO_AVATAR_PICKER, sender: nil)
     }
+    
+    
     @IBAction func pickBGColorPressed(_ sender: Any) {
-        let r = CGFloat(arc4random(255)) / 255
-        let g = CGFloat(arc4random(255)) / 255
-        let b = CGFloat(arc4random(255)) / 255
-
+        
+        let r = CGFloat(arc4random_uniform(255)) / 255
+        let g = CGFloat(arc4random_uniform(255)) / 255
+        let b = CGFloat(arc4random_uniform(255)) / 255
 
       bgColor = UIColor(red: r, green: g, blue: b, alpha: 1)
         avatarColor = "[ \(r), \(g), \(b), 1]"
         UIView.animate(withDuration: 0.2) {
         self.userImage.backgroundColor = self.bgColor
-            
+        
         }
     }
 
     @IBAction func closeButtonPressed(_ sender: Any) {
-        
         performSegue(withIdentifier: UNWIND, sender: nil)
         
         }
