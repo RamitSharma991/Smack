@@ -18,7 +18,7 @@ class AuthService {
     
     // variables that are used even after the app is closed like login details, Auth token and user emails
     let defaults = UserDefaults.standard
-    var isLooggedIn : Bool {
+    var isLoggedIn : Bool {
         get {
             return defaults.bool(forKey: LOGGED_IN_KEY)
         }
