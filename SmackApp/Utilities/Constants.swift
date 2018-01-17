@@ -15,6 +15,7 @@ let URL_REGISTER = "\(BASE_URL)account/register"
 let URL_LOGIN = "\(BASE_URL)account/login"
 let URL_USER_ADD = "\(BASE_URL)user/add"
 let URL_USER_BY_EMAIL = "\(BASE_URL)users/byEmail/"
+let URL_GET_CHANNELS = "\(BASE_URL)channel"
 
 //Colors
 let smakePlaceHolder = #colorLiteral(red: 0.1281911135, green: 0.4933825135, blue: 0.8569415212, alpha: 1)
