@@ -9,6 +9,7 @@
 import Foundation
 
 typealias CompletionHandler = (_ Succes: Bool) -> ()
+
 // URL Constants
 let BASE_URL = "https://thatchatapp.herokuapp.com/"
 let URL_REGISTER = "\(BASE_URL)account/register"
@@ -16,12 +17,18 @@ let URL_LOGIN = "\(BASE_URL)account/login"
 let URL_USER_ADD = "\(BASE_URL)user/add"
 let URL_USER_BY_EMAIL = "\(BASE_URL)users/byEmail/"
 let URL_GET_CHANNELS = "\(BASE_URL)channel"
+let URL_GET_MESSAGES = "\(BASE_URL)message/byChannel"
+
 
 //Colors
 let smakePlaceHolder = #colorLiteral(red: 0.1281911135, green: 0.4933825135, blue: 0.8569415212, alpha: 1)
 
 //Notification Constants
 let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChange")
+let NOTIF_CHANNELS_LOADED = Notification.Name("channelsLoaded")
+let NOTIF_CHANNEL_SELECTED = Notification.Name("channelSelected")
+
+
 
 // Segues
 let TO_LOGIN = "toLogin"

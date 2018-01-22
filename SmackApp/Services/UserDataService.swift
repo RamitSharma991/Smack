@@ -33,8 +33,7 @@ class UserDataService {
         // func to update the avatar name
 
     }
-    
-    
+   
    //coloredBckgrndImg
     
     func returnColor(components: String) -> UIColor {
@@ -75,6 +74,8 @@ class UserDataService {
         AuthService.instance.isLoggedIn = false
         AuthService.instance.userEmail = ""
         AuthService.instance.authToken = ""
+        MessageService.instance.clearChannels()
+        MessageService.instance.clearMessages()
     }
     
 }
