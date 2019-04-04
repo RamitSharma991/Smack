@@ -1,6 +1,6 @@
 # Smack (Slack Clone)
 Chat your way
-
+(for educatonal purposes only)
 
 
 ### Screenshots
